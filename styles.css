@@ -89,7 +89,7 @@ img { max-width: 100%; }
 .mono-tag--sage-deep { color: var(--sage-deep); }
 
 .display {
-  font-size: clamp(40px, 5.4vw, 72px);
+  font-size: clamp(34px, 4.4vw, 60px);
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.06;
@@ -196,10 +196,27 @@ img { max-width: 100%; }
 
 .hero {
   position: relative;
-  padding: 172px 0 110px;
+  padding: 150px 0 90px;
   overflow: hidden;
 }
 .hero > .container { position: relative; z-index: 1; }
+
+/* desktop: hero fits exactly in the first viewport */
+@media (min-width: 1025px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 92px 0 48px;
+  }
+  .hero > .container { width: 100%; }
+}
+@media (min-width: 1025px) and (max-height: 780px) {
+  .display { font-size: clamp(30px, 3.5vw, 46px); }
+  .hero__copy { gap: 20px; }
+  .lead { font-size: 17px; }
+}
 
 /* abstract animated background */
 .hero-bg {

@@ -1,0 +1,12 @@
+name = "layer-nine-site"
+compatibility_date = "2026-07-13"
+
+routes = [
+  { pattern = "layer-nine.ai/*", zone_name = "layer-nine.ai" },
+  { pattern = "www.layer-nine.ai/*", zone_name = "layer-nine.ai" }
+]
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"
+not_found_handling = "single-page-application"

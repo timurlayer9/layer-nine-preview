@@ -1,5 +1,6 @@
 name = "layer-nine-site"
 compatibility_date = "2026-07-13"
+account_id = "be1f1dba7f58cbd463c4d3c0a5ca144c"
 
 routes = [
   { pattern = "layer-nine.ai/*", zone_name = "layer-nine.ai" },

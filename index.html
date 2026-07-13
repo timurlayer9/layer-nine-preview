@@ -174,51 +174,103 @@
     </div>
   </section>
 
-  <!-- ============ APPROACH ============ -->
-  <section class="section" id="approach">
-    <div class="container split">
-      <div class="split__side reveal">
-        <p class="eyebrow"><span class="sq"></span>Approach</p>
-        <h2 class="h2">One use case at a time.</h2>
-        <p class="section__sub">Not everything at once. One workflow, built up properly, then the next. Each cycle starts from a stronger base: the context, the infrastructure, and the team you built last time.</p>
-        <p class="statement">Each cycle compounds.</p>
-      </div>
+  <!-- ============ APPROACH (pinned steps) ============ -->
+  <section class="section--tint" id="approach">
 
-      <div class="split__main">
-        <ol class="step-list">
-          <li class="step reveal">
-            <span class="step__marker"></span>
-            <div>
-              <p class="mono-tag mono-tag--muted">Step 01</p>
-              <h3 class="step__title">Discover the first use case</h3>
-              <p class="step__desc">One department, one workflow, measurable value. Chosen for impact, not ambition.</p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step__marker"></span>
-            <div>
-              <p class="mono-tag mono-tag--muted">Step 02</p>
-              <h3 class="step__title">Gather its context</h3>
-              <p class="step__desc">We collect what is scattered across documents, emails, SOPs, chat threads, and experienced people. Then we structure it: what is approved, what is current, who owns it, who may see it.</p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step__marker"></span>
-            <div>
-              <p class="mono-tag mono-tag--muted">Step 03</p>
-              <h3 class="step__title">Build the first agent</h3>
-              <p class="step__desc">Built on that context, integrated into the tools where it acts, with approvals where they matter.</p>
-            </div>
-          </li>
-          <li class="step reveal">
-            <span class="step__marker"></span>
-            <div>
-              <p class="mono-tag mono-tag--muted">Step 04</p>
-              <h3 class="step__title">Set the roadmap</h3>
-              <p class="step__desc">Real usage reveals the next automation. We prioritise future initiatives by organisational value, not novelty.</p>
-            </div>
-          </li>
-        </ol>
+    <div class="ap-scrolly" id="apScrolly">
+      <div class="ap-pin">
+        <div class="container split split--pin">
+          <div class="split__side">
+          <p class="eyebrow"><span class="sq"></span>Approach</p>
+          <h2 class="h2 h2--compact">One use case at a time.</h2>
+          <p class="section__sub">Not everything at once. One workflow, built up properly, then the next. Each cycle starts from a stronger base: the context, the infrastructure, and the team you built last time.</p>
+          <p class="statement">Each cycle compounds.</p>
+          </div>
+          <div class="split__main">
+            <ol class="step-list step-list--scrolly" id="apSteps">
+            <li class="step">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 01</p>
+                <h3 class="step__title">Discover the first use case</h3>
+                <p class="step__desc">One department, one workflow, measurable value. Chosen for impact, not ambition.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 02</p>
+                <h3 class="step__title">Gather its context</h3>
+                <p class="step__desc">We collect what is scattered across documents, emails, SOPs, chat threads, and experienced people. Then we structure it: what is approved, what is current, who owns it, who may see it.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 03</p>
+                <h3 class="step__title">Build the first agent</h3>
+                <p class="step__desc">Built on that context, integrated into the tools where it acts, with approvals where they matter.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 04</p>
+                <h3 class="step__title">Set the roadmap</h3>
+                <p class="step__desc">Real usage reveals the next automation. We prioritise future initiatives by organisational value, not novelty.</p>
+              </div>
+            </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Static fallback: mobile & reduced motion -->
+    <div class="ap-fallback">
+      <div class="container split">
+        <div class="split__side reveal">
+          <p class="eyebrow"><span class="sq"></span>Approach</p>
+          <h2 class="h2 h2--compact">One use case at a time.</h2>
+          <p class="section__sub">Not everything at once. One workflow, built up properly, then the next. Each cycle starts from a stronger base: the context, the infrastructure, and the team you built last time.</p>
+          <p class="statement">Each cycle compounds.</p>
+        </div>
+        <div class="split__main">
+          <ol class="step-list">
+            <li class="step reveal">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 01</p>
+                <h3 class="step__title">Discover the first use case</h3>
+                <p class="step__desc">One department, one workflow, measurable value. Chosen for impact, not ambition.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 02</p>
+                <h3 class="step__title">Gather its context</h3>
+                <p class="step__desc">We collect what is scattered across documents, emails, SOPs, chat threads, and experienced people. Then we structure it: what is approved, what is current, who owns it, who may see it.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 03</p>
+                <h3 class="step__title">Build the first agent</h3>
+                <p class="step__desc">Built on that context, integrated into the tools where it acts, with approvals where they matter.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step__marker"></span>
+              <div>
+                <p class="mono-tag mono-tag--muted">Step 04</p>
+                <h3 class="step__title">Set the roadmap</h3>
+                <p class="step__desc">Real usage reveals the next automation. We prioritise future initiatives by organisational value, not novelty.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -229,7 +281,7 @@
       <header class="section__head reveal">
         <p class="eyebrow eyebrow--dark"><span class="sq"></span>Layer Nine infrastructure</p>
         <h2 class="h2 h2--invert">The layer between your tools, your team, and AI.</h2>
-        <p class="section__sub section__sub--invert">The secure infrastructure to build, deploy, and manage AI agents across your organisation. It plugs into your existing stack, so agents access the systems they need inside your governance framework.</p>
+        <p class="section__sub section__sub--invert">The secure infrastructure to build, deploy, and manage AI agents across your organisation, plugged into your existing stack inside your governance framework.</p>
       </header>
 
       <div class="infra-diagram reveal">

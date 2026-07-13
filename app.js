@@ -49,6 +49,41 @@ window.addEventListener('scroll', onScroll, { passive: true });
   update();
 })();
 
+// Pinned approach steps
+(() => {
+  const track = document.getElementById('apScrolly');
+  const list = document.getElementById('apSteps');
+  if (!track || !list) return;
+
+  const steps = Array.from(list.querySelectorAll('.step'));
+  let current = -1;
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    if (track.offsetHeight === 0) return; // hidden (mobile / reduced motion)
+    const rect = track.getBoundingClientRect();
+    const total = track.offsetHeight - window.innerHeight;
+    const progress = Math.max(0, Math.min(1, -rect.top / total));
+    const active = Math.min(steps.length - 1, Math.floor(progress * steps.length));
+    if (active !== current) {
+      current = active;
+      steps.forEach((el, i) => el.classList.toggle('is-on', i <= active));
+    }
+  };
+
+  const requestUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
+  update();
+})();
+
 // Reveal on scroll
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals = document.querySelectorAll('.reveal');

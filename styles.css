@@ -363,22 +363,25 @@ img { max-width: 100%; }
   max-width: 760px;
 }
 
-/* ---------- what we do ---------- */
+/* ---------- what we do (fits one viewport on desktop) ---------- */
+
+#what-we-do { padding: 64px 0 72px; }
+#what-we-do .section__head { margin-bottom: 30px; gap: 12px; }
 
 .svc-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 .svc-card {
   position: relative;
   background: #faf9f5;
   border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 34px 36px 36px;
+  border-radius: 18px;
+  padding: 22px 22px 26px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   transition: transform 0.35s var(--ease-swift), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 .svc-card:hover {
@@ -390,7 +393,7 @@ img { max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 .svc-card__num {
   font-family: var(--font-mono);
@@ -400,18 +403,18 @@ img { max-width: 100%; }
 }
 .svc-card .sq { opacity: 0; transform: scale(0.6); transition: opacity 0.35s ease, transform 0.35s var(--ease-swift); }
 .svc-card:hover .sq { opacity: 1; transform: none; }
-.svc-card__title { font-size: 22px; font-weight: 600; letter-spacing: -0.015em; }
-.svc-card__desc { font-size: 16px; line-height: 1.6; color: var(--gray); }
+.svc-card__title { font-size: 18.5px; font-weight: 600; letter-spacing: -0.015em; }
+.svc-card__desc { font-size: 14.5px; line-height: 1.55; color: var(--gray); }
 
 /* card mini-illustrations (same language as the diagrams) */
 .svc-ill {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  height: 128px;
-  margin: 2px 0 16px;
-  border-radius: 14px;
+  gap: 11px;
+  height: 106px;
+  margin: 0 0 12px;
+  border-radius: 12px;
   background-image: radial-gradient(rgba(20, 20, 15, 0.07) 1px, transparent 1.5px);
   background-size: 18px 18px;
   background-position: 4px 4px;
@@ -517,6 +520,93 @@ img { max-width: 100%; }
 }
 
 .mini-vline { width: 1px; height: 11px; background: var(--line-strong); }
+
+/* strategy: prioritised list */
+.ill-list { display: flex; flex-direction: column; gap: 8px; }
+.ill-li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 3px 0 #d6d2c4,
+    0 8px 14px -10px rgba(20, 20, 15, 0.35);
+}
+.ill-li em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted-2);
+}
+.ill-li__bar { display: block; width: 54px; height: 5px; border-radius: 3px; background: var(--line-strong); }
+.ill-li .mini-dot { position: static; }
+.ill-li--active {
+  background: linear-gradient(172deg, #26261d 0%, #14140f 60%);
+  border-color: #14140f;
+  box-shadow: 0 3px 0 #3b3b31, 0 10px 16px -12px rgba(20, 20, 15, 0.5);
+}
+.ill-li--active em { color: var(--invert-dim); }
+.ill-li--active .ill-li__bar { background: rgba(244, 242, 236, 0.4); }
+.ill-li--faded { opacity: 0.55; }
+
+/* implementation: labeled agent block */
+.mini-core--label {
+  width: 66px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-core--label em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--invert);
+}
+
+/* team enablement: coach + badges */
+.mini-circle--ink { display: flex; align-items: center; justify-content: center; }
+.mini-l9 { width: 14px; height: 14px; object-fit: contain; filter: invert(1); }
+.mini-circle--badge { position: relative; }
+.mini-circle--badge::after {
+  content: "";
+  position: absolute;
+  top: -2px; right: -1px;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--sage-bright);
+  border: 1.5px solid #faf9f5;
+}
+
+/* infrastructure: labeled bars */
+.mini-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 96px;
+  height: 20px;
+}
+.mini-bar em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mini-bar--ink em { color: var(--invert-dim); }
+.mini-bar--sage em { color: var(--sage-deep); }
+.mini-bar--ink .mini-dot { position: static; }
 
 /* ---------- the path: pinned scrollytelling ---------- */
 
@@ -1084,32 +1174,6 @@ img { max-width: 100%; }
 .step__title { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
 .step__desc { font-size: 16px; color: var(--gray); max-width: 520px; }
 
-/* ---------- anatomy ---------- */
-
-.anatomy-card {
-  background: var(--cream);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 12px 36px;
-}
-.anatomy-row {
-  display: grid;
-  grid-template-columns: 48px 220px 1fr;
-  gap: 24px;
-  align-items: baseline;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
-}
-.anatomy-row:last-child { border-bottom: none; }
-.anatomy-row__num {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: var(--muted-2);
-}
-.anatomy-row__title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
-.anatomy-row__desc { font-size: 15.5px; color: var(--gray); }
-
 /* ---------- infrastructure ---------- */
 
 #infrastructure .section__head { margin-bottom: 64px; }
@@ -1294,6 +1358,7 @@ img { max-width: 100%; }
   .split__side { position: static; }
   .path-grid { grid-template-columns: 1fr 1fr; gap: 40px 32px; }
   .sec-grid { grid-template-columns: 1fr 1fr; }
+  .svc-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -1304,9 +1369,6 @@ img { max-width: 100%; }
   .svc-grid { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: 1fr; }
   .sec-grid { grid-template-columns: 1fr; }
-  .anatomy-card { padding: 8px 22px; }
-  .anatomy-row { grid-template-columns: 40px 1fr; }
-  .anatomy-row__desc { grid-column: 2; }
   .stack-card { padding: 20px; }
   .stack-card__agents { grid-template-columns: 1fr 1fr; }
 }

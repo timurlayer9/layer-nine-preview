@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The path — Layer Nine</title>
+<meta name="description" content="From individual chat to a multi-agent operations platform: the four stages of AI maturity, and how Layer Nine takes you through them." />
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="icon" type="image/png" href="assets/l9-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__icon brand__icon--invert" src="assets/l9-icon.png" alt="" aria-hidden="true" />
+      <span class="brand__name">Layer Nine</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#what-we-do">What we do</a>
+      <a href="path.html" aria-current="page">The path</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#infrastructure">Infrastructure</a>
+      <a href="index.html#security">Security</a>
+      <a class="pill pill--sage" href="index.html#contact">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ THE PATH (pinned scrollytelling) ============ -->
+  <section class="section--tint scrolly-section" id="path">
+
+    <div class="scrolly" id="scrolly">
+      <div class="scrolly__pin">
+        <div class="container">
+          <header class="scrolly__head">
+            <p class="eyebrow"><span class="sq"></span>The path</p>
+            <h2 class="h2 h2--compact">From chat to an operations platform.</h2>
+          </header>
+
+          <div class="scrolly__rail" aria-hidden="true">
+            <span class="scrolly__rail-line"><span class="scrolly__rail-fill" id="railFill"></span></span>
+            <span class="sq-step is-on"></span>
+            <span class="sq-step"></span>
+            <span class="sq-step"></span>
+            <span class="sq-step"></span>
+          </div>
+
+          <div class="scrolly__grid">
+            <div class="scrolly__text">
+              <div class="scrolly__stage is-active">
+                <p class="mono-tag mono-tag--muted">Stage 01 · Today</p>
+                <h3 class="scrolly__title">Chat</h3>
+                <p class="scrolly__desc">People use GPT or Claude individually. Company knowledge is limited to uploaded documents; usage has no governance.</p>
+                <p class="scrolly__note">The human is the integration layer. Every read and write is manual.</p>
+              </div>
+              <div class="scrolly__stage">
+                <p class="mono-tag mono-tag--muted">Stage 02</p>
+                <h3 class="scrolly__title">Chat connected to tools</h3>
+                <p class="scrolly__desc">AI reads and writes in your inbox, documents, and tools, but only through the provider's integration list, on the provider's terms.</p>
+                <p class="scrolly__note">Every task still takes many rounds of hands-on steering.</p>
+              </div>
+              <div class="scrolly__stage">
+                <p class="mono-tag mono-tag--sage-deep">Stage 03 · The first step</p>
+                <h3 class="scrolly__title">An agent with context</h3>
+                <p class="scrolly__desc">Context is built around one department. The agent follows a playbook and works directly inside your CRM, ERP, and inbox.</p>
+                <p class="scrolly__note">The agent becomes the integration layer. People supervise and approve.</p>
+              </div>
+              <div class="scrolly__stage">
+                <p class="mono-tag mono-tag--sage-deep">Stage 04 · The destination</p>
+                <h3 class="scrolly__title">A multi-agent platform</h3>
+                <p class="scrolly__desc">Specialised agents share one company knowledge base under a central orchestrator. Your team ships new agents by prompt, no code.</p>
+                <p class="scrolly__note">New agents ship in days, not projects. Governance stays central.</p>
+              </div>
+            </div>
+
+            <div class="viz-card" id="viz" data-stage="0">
+              <div class="viz-scene" aria-hidden="true">
+              <div class="viz-canvas">
+
+                <div class="viz-num">
+                  <span class="vn vn-0">01</span>
+                  <span class="vn vn-1">02</span>
+                  <span class="vn vn-2">03</span>
+                  <span class="vn vn-3">04</span>
+                </div>
+
+                <svg class="viz-svg" viewBox="0 0 660 460" preserveAspectRatio="none" fill="none">
+                  <defs>
+                    <marker id="ah" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M1,0.5 L7,4 L1,7.5" fill="none" stroke="context-stroke" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </marker>
+                  </defs>
+                  <!-- Stage 0: manual copy-paste -->
+                  <g class="ps ps-0">
+                    <path class="dashed" d="M140,150 C190,146 218,158 249,174" marker-end="url(#ah)"/>
+                    <path class="dashed" d="M249,206 C218,222 190,234 140,230" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M352,174 C382,160 400,152 428,152" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M428,228 C400,228 382,220 352,206" marker-end="url(#ah)"/>
+                  </g>
+                  <!-- Stage 1: connected chat -->
+                  <g class="ps ps-1">
+                    <path class="draw" pathLength="1" d="M140,150 C176,146 204,156 238,166" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M238,214 C204,224 176,234 140,230" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M540,174 C510,160 472,154 442,154" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M442,226 C472,226 510,220 540,206" marker-end="url(#ah)"/>
+                  </g>
+                  <!-- Stage 2: the agent -->
+                  <g class="ps ps-2">
+                    <path class="draw" pathLength="1" d="M140,150 C176,146 204,156 238,166" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M238,214 C204,224 176,234 140,230" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M340,258 C340,278 334,292 331,311" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M478,135 C462,140 452,148 444,158" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M478,215 C462,211 452,206 444,201" marker-end="url(#ah)"/>
+                  </g>
+                  <!-- Stage 3: orchestrated platform -->
+                  <g class="ps ps-3">
+                    <path class="draw" pathLength="1" d="M330,64 C330,112 99.5,102 99.5,146" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M330,64 C330,108 252.5,104 252.5,146" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M330,64 C330,108 407.5,104 407.5,146" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M330,64 C330,112 560.5,102 560.5,146" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M99.5,228 C99.5,262 330,256 330,302" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M252.5,228 C252.5,258 330,260 330,302" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M407.5,228 C407.5,258 330,260 330,302" marker-end="url(#ah)"/>
+                    <path class="draw" pathLength="1" d="M560.5,228 C560.5,262 330,256 330,302" marker-end="url(#ah)"/>
+                  </g>
+                </svg>
+
+                <div class="viz-node viz-systems">
+                  <span class="viz-node__tag">Your systems</span>
+                  <span class="viz-chip">CRM</span>
+                  <span class="viz-chip">ERP</span>
+                  <span class="viz-chip">Inbox</span>
+                  <span class="viz-chip">Documents</span>
+                </div>
+
+                <div class="viz-node viz-human"><span class="viz-human__circle">Human</span></div>
+
+                <div class="viz-node viz-core">
+                  <span class="viz-core__dot"></span>
+                  <div class="viz-core__c c0">
+                    <span class="viz-node__tag viz-node__tag--dim">AI chat</span>
+                    <strong>GPT · Claude</strong>
+                    <span class="viz-core__sub">Knows the internet, not your company.</span>
+                  </div>
+                  <div class="viz-core__c c1">
+                    <span class="viz-node__tag viz-node__tag--dim">AI chat</span>
+                    <strong>GPT · Claude</strong>
+                    <span class="viz-core__sub">Connected to tools, on the provider's terms.</span>
+                  </div>
+                  <div class="viz-core__c c2">
+                    <span class="viz-node__tag viz-node__tag--dim">The agent</span>
+                    <strong>Works inside your systems</strong>
+                    <span class="viz-core__sub">No copy-paste in between.</span>
+                  </div>
+                </div>
+
+                <div class="viz-node viz-cards">
+                  <div class="viz-scard">
+                    <span class="viz-node__tag viz-node__tag--sage">Context</span>
+                    <span>Knowledge of one department.</span>
+                  </div>
+                  <div class="viz-scard">
+                    <span class="viz-node__tag viz-node__tag--sage">Playbook</span>
+                    <span>Clear instructions for every action.</span>
+                  </div>
+                </div>
+
+                <div class="viz-node viz-orch">
+                  <span class="viz-core__dot"></span>
+                  <span class="viz-node__tag viz-node__tag--dim">Orchestrator</span>
+                  <span class="viz-orch__sub">Monitors and optimises every agent.</span>
+                </div>
+                <div class="viz-node viz-agents">
+                  <span class="viz-agent"><em>Agent</em>Sales</span>
+                  <span class="viz-agent"><em>Agent</em>Finance</span>
+                  <span class="viz-agent"><em>Agent</em>Operations</span>
+                  <span class="viz-agent"><em>Agent</em>Support</span>
+                </div>
+                <div class="viz-node viz-knowledge">
+                  <span class="viz-node__tag viz-node__tag--sage">Company knowledge</span>
+                  <span class="viz-knowledge__sub">One shared base: secure, consistent, current.</span>
+                </div>
+
+                <div class="viz-labels">
+                  <span class="lb ls-0" style="left:29.5%;top:26%">copies out</span>
+                  <span class="lb ls-0" style="left:29.5%;top:52.5%">types back</span>
+                  <span class="lb ls-0" style="left:59%;top:26%">asks</span>
+                  <span class="lb ls-0" style="left:59%;top:52.5%">answers</span>
+                  <span class="lb ls-1" style="left:28.5%;top:26%">reads</span>
+                  <span class="lb ls-1" style="left:28.5%;top:52.5%">writes</span>
+                  <span class="lb ls-1" style="left:74.5%;top:26%">asks</span>
+                  <span class="lb ls-1" style="left:74.5%;top:52.5%">answers</span>
+                  <span class="lb ls-2" style="left:28.5%;top:26%">reads</span>
+                  <span class="lb ls-2" style="left:28.5%;top:52.5%">updates</span>
+                  <span class="lb lb--right ls-2" style="left:48%;top:60.5%">supervises &amp; approves</span>
+                  <span class="lb ls-3" style="left:50%;top:20%">orchestrates workflows</span>
+                  <span class="lb ls-3" style="left:50%;top:59%">permissioned access</span>
+                </div>
+
+              </div>
+              </div>
+
+              <div class="viz-footer">
+                <div class="viz-captions">
+                  <span class="vc vc-0">The human is the integration layer. Every read and write is manual.</span>
+                  <span class="vc vc-1">Connected, but on the provider's terms. Every task needs steering.</span>
+                  <span class="vc vc-2">The agent becomes the integration layer. People supervise and approve.</span>
+                  <span class="vc vc-3">One knowledge base, many agents, one control panel.</span>
+                </div>
+                <span class="viz-count">
+                  <span class="viz-count__cur">
+                    <span class="vn2 vn2-0">01</span>
+                    <span class="vn2 vn2-1">02</span>
+                    <span class="vn2 vn2-2">03</span>
+                    <span class="vn2 vn2-3">04</span>
+                  </span>
+                  <span class="viz-count__of">/ 04</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Static fallback: mobile & reduced motion -->
+    <div class="scrolly-fallback">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow"><span class="sq"></span>The path</p>
+          <h2 class="h2">From chat to an operations platform.</h2>
+          <p class="section__sub">Most companies are at stage one or two. The value starts at stage three. Here is the whole path, so you know what you are building toward.</p>
+        </header>
+
+        <div class="path-grid">
+          <div class="path-stage reveal">
+            <p class="mono-tag mono-tag--muted">Stage 01 · Today</p>
+            <h3 class="path-stage__title">Chat</h3>
+            <p class="path-stage__desc">People use GPT or Claude individually. Company knowledge is limited to uploaded documents; usage has no governance.</p>
+            <p class="path-stage__note">The human is the integration layer. Every read and write is manual.</p>
+          </div>
+          <div class="path-stage reveal">
+            <p class="mono-tag mono-tag--muted">Stage 02</p>
+            <h3 class="path-stage__title">Chat connected to tools</h3>
+            <p class="path-stage__desc">AI reads and writes in your inbox, documents, and tools, but only through the provider's integration list, on the provider's terms.</p>
+            <p class="path-stage__note">Every task still takes many rounds of hands-on steering.</p>
+          </div>
+          <div class="path-stage reveal">
+            <p class="mono-tag mono-tag--sage-deep">Stage 03 · The first step</p>
+            <h3 class="path-stage__title">An agent with context</h3>
+            <p class="path-stage__desc">Context is built around one department. The agent follows a playbook and works directly inside your CRM, ERP, and inbox.</p>
+            <p class="path-stage__note">The agent becomes the integration layer. People supervise and approve.</p>
+          </div>
+          <div class="path-stage reveal">
+            <p class="mono-tag mono-tag--sage-deep">Stage 04 · The destination</p>
+            <h3 class="path-stage__title">A multi-agent platform</h3>
+            <p class="path-stage__desc">Specialised agents share one company knowledge base under a central orchestrator. Your team ships new agents by prompt, no code.</p>
+            <p class="path-stage__note">New agents ship in days, not projects. Governance stays central.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="section section--sage">
+    <div class="container cta">
+      <p class="eyebrow eyebrow--sage"><span class="sq sq--ink"></span>Get started</p>
+      <h2 class="h2 cta__title">Wherever you are on the path, we take it from there.</h2>
+      <p class="section__sub cta__sub">Most companies are at stage one or two. One discovery call is enough to find the first use case worth building.</p>
+      <div class="cta__actions">
+        <a class="pill pill--dark pill--lg" href="mailto:hello@layer9.ai?subject=Discovery%20call">Book a discovery call</a>
+        <a class="cta__mail" href="index.html">Back to overview</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer theme-dark">
+  <div class="container footer__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__icon brand__icon--invert" src="assets/l9-icon.png" alt="" aria-hidden="true" />
+      <span class="brand__name">Layer Nine</span>
+    </a>
+    <p class="footer__tag">AI systems that do real work. Helsinki · Chur · Tokyo.</p>
+    <p class="footer__meta"><span class="sq"></span><span class="mono-tag mono-tag--dim">layer-nine.ai</span></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

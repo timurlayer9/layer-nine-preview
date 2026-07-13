@@ -23,7 +23,7 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#what-we-do">What we do</a>
-      <a href="#path">The path</a>
+      <a href="path.html">The path</a>
       <a href="#approach">Approach</a>
       <a href="#infrastructure">Infrastructure</a>
       <a href="#security">Security</a>
@@ -57,7 +57,7 @@
         </p>
         <div class="hero__cta">
           <a class="pill pill--cream pill--lg" href="#contact">Book a discovery call</a>
-          <a class="pill pill--ghost-dark pill--lg" href="#path">See where this goes</a>
+          <a class="pill pill--ghost-dark pill--lg" href="path.html">See where this goes</a>
         </div>
       </div>
 
@@ -108,16 +108,14 @@
             <span class="sq"></span>
           </div>
           <div class="svc-ill" aria-hidden="true">
-            <div class="mini-stack">
-              <span class="mini-tile" style="width:64px"></span>
-              <span class="mini-tile" style="width:50px;opacity:.65"></span>
-              <span class="mini-tile" style="width:40px;opacity:.4"></span>
+            <div class="ill-list">
+              <span class="ill-li ill-li--active"><em>01</em><span class="ill-li__bar"></span><span class="mini-dot"></span></span>
+              <span class="ill-li"><em>02</em><span class="ill-li__bar"></span></span>
+              <span class="ill-li ill-li--faded"><em>03</em><span class="ill-li__bar"></span></span>
             </div>
-            <span class="mini-arrow"></span>
-            <div class="mini-core"><span class="mini-dot"></span></div>
           </div>
           <h3 class="svc-card__title">Strategy</h3>
-          <p class="svc-card__desc">A plan grounded in reality, not the AI landscape's noise. We map where AI creates measurable value in your organisation, and in what order to capture it.</p>
+          <p class="svc-card__desc">A plan grounded in reality, not the AI landscape's noise. Where AI creates value, and in what order to capture it.</p>
         </article>
         <article class="svc-card reveal">
           <div class="svc-card__head">
@@ -125,11 +123,13 @@
             <span class="sq"></span>
           </div>
           <div class="svc-ill" aria-hidden="true">
-            <span class="mini-tile" style="width:44px;height:30px"></span>
+            <div class="mini-stack">
+              <span class="mini-tile" style="width:36px"></span>
+              <span class="mini-sage" style="width:36px;height:16px"></span>
+              <span class="mini-tile" style="width:36px"></span>
+            </div>
             <span class="mini-arrow"></span>
-            <div class="mini-core"><span class="mini-dot"></span></div>
-            <span class="mini-arrow"></span>
-            <span class="mini-sage" style="width:48px;height:30px"></span>
+            <div class="mini-core mini-core--label"><span class="mini-dot"></span><em>Agent</em></div>
           </div>
           <h3 class="svc-card__title">Implementation</h3>
           <p class="svc-card__desc">We build the system itself: knowledge base, agents, and workflows. Then we hand it over for independent operation, or keep running it for you.</p>
@@ -140,12 +140,12 @@
             <span class="sq"></span>
           </div>
           <div class="svc-ill" aria-hidden="true">
-            <span class="mini-circle mini-circle--ink"></span>
+            <span class="mini-circle mini-circle--ink"><img src="assets/l9-icon.png" alt="" class="mini-l9" /></span>
             <span class="mini-arrow"></span>
             <div class="mini-row">
-              <span class="mini-circle"></span>
-              <span class="mini-circle"></span>
-              <span class="mini-circle mini-circle--sage"></span>
+              <span class="mini-circle mini-circle--badge"></span>
+              <span class="mini-circle mini-circle--badge"></span>
+              <span class="mini-circle mini-circle--badge"></span>
             </div>
           </div>
           <h3 class="svc-card__title">Team enablement</h3>
@@ -157,7 +157,7 @@
             <span class="sq"></span>
           </div>
           <div class="svc-ill svc-ill--col" aria-hidden="true">
-            <span class="mini-bar mini-bar--ink"><span class="mini-dot"></span></span>
+            <span class="mini-bar mini-bar--ink"><span class="mini-dot"></span><em>Control</em></span>
             <span class="mini-vline"></span>
             <div class="mini-row mini-row--gap">
               <span class="mini-tile" style="width:26px;height:16px"></span>
@@ -165,247 +165,11 @@
               <span class="mini-tile" style="width:26px;height:16px"></span>
             </div>
             <span class="mini-vline"></span>
-            <span class="mini-bar mini-bar--sage"></span>
+            <span class="mini-bar mini-bar--sage"><em>Knowledge</em></span>
           </div>
           <h3 class="svc-card__title">Infrastructure</h3>
-          <p class="svc-card__desc">Managed infrastructure to build, run, and iterate on your own agents. The operational foundation of your AI capability, and it keeps you model-independent.</p>
+          <p class="svc-card__desc">Managed infrastructure to build, run, and iterate on your own agents. It keeps you model-independent.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ THE PATH (pinned scrollytelling) ============ -->
-  <section class="section--tint scrolly-section" id="path">
-
-    <div class="scrolly" id="scrolly">
-      <div class="scrolly__pin">
-        <div class="container">
-          <header class="scrolly__head">
-            <p class="eyebrow"><span class="sq"></span>The path</p>
-            <h2 class="h2 h2--compact">From chat to an operations platform.</h2>
-          </header>
-
-          <div class="scrolly__rail" aria-hidden="true">
-            <span class="scrolly__rail-line"><span class="scrolly__rail-fill" id="railFill"></span></span>
-            <span class="sq-step is-on"></span>
-            <span class="sq-step"></span>
-            <span class="sq-step"></span>
-            <span class="sq-step"></span>
-          </div>
-
-          <div class="scrolly__grid">
-            <div class="scrolly__text">
-              <div class="scrolly__stage is-active">
-                <p class="mono-tag mono-tag--muted">Stage 01 · Today</p>
-                <h3 class="scrolly__title">Chat</h3>
-                <p class="scrolly__desc">People use GPT or Claude individually. Company knowledge is limited to uploaded documents; usage has no governance.</p>
-                <p class="scrolly__note">The human is the integration layer. Every read and write is manual.</p>
-              </div>
-              <div class="scrolly__stage">
-                <p class="mono-tag mono-tag--muted">Stage 02</p>
-                <h3 class="scrolly__title">Chat connected to tools</h3>
-                <p class="scrolly__desc">AI reads and writes in your inbox, documents, and tools, but only through the provider's integration list, on the provider's terms.</p>
-                <p class="scrolly__note">Every task still takes many rounds of hands-on steering.</p>
-              </div>
-              <div class="scrolly__stage">
-                <p class="mono-tag mono-tag--sage-deep">Stage 03 · The first step</p>
-                <h3 class="scrolly__title">An agent with context</h3>
-                <p class="scrolly__desc">Context is built around one department. The agent follows a playbook and works directly inside your CRM, ERP, and inbox.</p>
-                <p class="scrolly__note">The agent becomes the integration layer. People supervise and approve.</p>
-              </div>
-              <div class="scrolly__stage">
-                <p class="mono-tag mono-tag--sage-deep">Stage 04 · The destination</p>
-                <h3 class="scrolly__title">A multi-agent platform</h3>
-                <p class="scrolly__desc">Specialised agents share one company knowledge base under a central orchestrator. Your team ships new agents by prompt, no code.</p>
-                <p class="scrolly__note">New agents ship in days, not projects. Governance stays central.</p>
-              </div>
-            </div>
-
-            <div class="viz-card" id="viz" data-stage="0">
-              <div class="viz-scene" aria-hidden="true">
-              <div class="viz-canvas">
-
-                <div class="viz-num">
-                  <span class="vn vn-0">01</span>
-                  <span class="vn vn-1">02</span>
-                  <span class="vn vn-2">03</span>
-                  <span class="vn vn-3">04</span>
-                </div>
-
-                <svg class="viz-svg" viewBox="0 0 660 460" preserveAspectRatio="none" fill="none">
-                  <defs>
-                    <marker id="ah" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                      <path d="M1,0.5 L7,4 L1,7.5" fill="none" stroke="context-stroke" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </marker>
-                  </defs>
-                  <!-- Stage 0: manual copy-paste -->
-                  <g class="ps ps-0">
-                    <path class="dashed" d="M140,150 C190,146 218,158 249,174" marker-end="url(#ah)"/>
-                    <path class="dashed" d="M249,206 C218,222 190,234 140,230" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M352,174 C382,160 400,152 428,152" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M428,228 C400,228 382,220 352,206" marker-end="url(#ah)"/>
-                  </g>
-                  <!-- Stage 1: connected chat -->
-                  <g class="ps ps-1">
-                    <path class="draw" pathLength="1" d="M140,150 C176,146 204,156 238,166" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M238,214 C204,224 176,234 140,230" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M540,174 C510,160 472,154 442,154" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M442,226 C472,226 510,220 540,206" marker-end="url(#ah)"/>
-                  </g>
-                  <!-- Stage 2: the agent -->
-                  <g class="ps ps-2">
-                    <path class="draw" pathLength="1" d="M140,150 C176,146 204,156 238,166" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M238,214 C204,224 176,234 140,230" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M340,258 C340,278 334,292 331,311" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M478,135 C462,140 452,148 444,158" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M478,215 C462,211 452,206 444,201" marker-end="url(#ah)"/>
-                  </g>
-                  <!-- Stage 3: orchestrated platform -->
-                  <g class="ps ps-3">
-                    <path class="draw" pathLength="1" d="M330,64 C330,112 99.5,102 99.5,146" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M330,64 C330,108 252.5,104 252.5,146" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M330,64 C330,108 407.5,104 407.5,146" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M330,64 C330,112 560.5,102 560.5,146" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M99.5,228 C99.5,262 330,256 330,302" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M252.5,228 C252.5,258 330,260 330,302" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M407.5,228 C407.5,258 330,260 330,302" marker-end="url(#ah)"/>
-                    <path class="draw" pathLength="1" d="M560.5,228 C560.5,262 330,256 330,302" marker-end="url(#ah)"/>
-                  </g>
-                </svg>
-
-                <div class="viz-node viz-systems">
-                  <span class="viz-node__tag">Your systems</span>
-                  <span class="viz-chip">CRM</span>
-                  <span class="viz-chip">ERP</span>
-                  <span class="viz-chip">Inbox</span>
-                  <span class="viz-chip">Documents</span>
-                </div>
-
-                <div class="viz-node viz-human"><span class="viz-human__circle">Human</span></div>
-
-                <div class="viz-node viz-core">
-                  <span class="viz-core__dot"></span>
-                  <div class="viz-core__c c0">
-                    <span class="viz-node__tag viz-node__tag--dim">AI chat</span>
-                    <strong>GPT · Claude</strong>
-                    <span class="viz-core__sub">Knows the internet, not your company.</span>
-                  </div>
-                  <div class="viz-core__c c1">
-                    <span class="viz-node__tag viz-node__tag--dim">AI chat</span>
-                    <strong>GPT · Claude</strong>
-                    <span class="viz-core__sub">Connected to tools, on the provider's terms.</span>
-                  </div>
-                  <div class="viz-core__c c2">
-                    <span class="viz-node__tag viz-node__tag--dim">The agent</span>
-                    <strong>Works inside your systems</strong>
-                    <span class="viz-core__sub">No copy-paste in between.</span>
-                  </div>
-                </div>
-
-                <div class="viz-node viz-cards">
-                  <div class="viz-scard">
-                    <span class="viz-node__tag viz-node__tag--sage">Context</span>
-                    <span>Knowledge of one department.</span>
-                  </div>
-                  <div class="viz-scard">
-                    <span class="viz-node__tag viz-node__tag--sage">Playbook</span>
-                    <span>Clear instructions for every action.</span>
-                  </div>
-                </div>
-
-                <div class="viz-node viz-orch">
-                  <span class="viz-core__dot"></span>
-                  <span class="viz-node__tag viz-node__tag--dim">Orchestrator</span>
-                  <span class="viz-orch__sub">Monitors and optimises every agent.</span>
-                </div>
-                <div class="viz-node viz-agents">
-                  <span class="viz-agent"><em>Agent</em>Sales</span>
-                  <span class="viz-agent"><em>Agent</em>Finance</span>
-                  <span class="viz-agent"><em>Agent</em>Operations</span>
-                  <span class="viz-agent"><em>Agent</em>Support</span>
-                </div>
-                <div class="viz-node viz-knowledge">
-                  <span class="viz-node__tag viz-node__tag--sage">Company knowledge</span>
-                  <span class="viz-knowledge__sub">One shared base: secure, consistent, current.</span>
-                </div>
-
-                <div class="viz-labels">
-                  <span class="lb ls-0" style="left:29.5%;top:26%">copies out</span>
-                  <span class="lb ls-0" style="left:29.5%;top:52.5%">types back</span>
-                  <span class="lb ls-0" style="left:59%;top:26%">asks</span>
-                  <span class="lb ls-0" style="left:59%;top:52.5%">answers</span>
-                  <span class="lb ls-1" style="left:28.5%;top:26%">reads</span>
-                  <span class="lb ls-1" style="left:28.5%;top:52.5%">writes</span>
-                  <span class="lb ls-1" style="left:74.5%;top:26%">asks</span>
-                  <span class="lb ls-1" style="left:74.5%;top:52.5%">answers</span>
-                  <span class="lb ls-2" style="left:28.5%;top:26%">reads</span>
-                  <span class="lb ls-2" style="left:28.5%;top:52.5%">updates</span>
-                  <span class="lb lb--right ls-2" style="left:48%;top:60.5%">supervises &amp; approves</span>
-                  <span class="lb ls-3" style="left:50%;top:20%">orchestrates workflows</span>
-                  <span class="lb ls-3" style="left:50%;top:59%">permissioned access</span>
-                </div>
-
-              </div>
-              </div>
-
-              <div class="viz-footer">
-                <div class="viz-captions">
-                  <span class="vc vc-0">The human is the integration layer. Every read and write is manual.</span>
-                  <span class="vc vc-1">Connected, but on the provider's terms. Every task needs steering.</span>
-                  <span class="vc vc-2">The agent becomes the integration layer. People supervise and approve.</span>
-                  <span class="vc vc-3">One knowledge base, many agents, one control panel.</span>
-                </div>
-                <span class="viz-count">
-                  <span class="viz-count__cur">
-                    <span class="vn2 vn2-0">01</span>
-                    <span class="vn2 vn2-1">02</span>
-                    <span class="vn2 vn2-2">03</span>
-                    <span class="vn2 vn2-3">04</span>
-                  </span>
-                  <span class="viz-count__of">/ 04</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Static fallback: mobile & reduced motion -->
-    <div class="scrolly-fallback">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow"><span class="sq"></span>The path</p>
-          <h2 class="h2">From chat to an operations platform.</h2>
-          <p class="section__sub">Most companies are at stage one or two. The value starts at stage three. Here is the whole path, so you know what you are building toward.</p>
-        </header>
-
-        <div class="path-grid">
-          <div class="path-stage reveal">
-            <p class="mono-tag mono-tag--muted">Stage 01 · Today</p>
-            <h3 class="path-stage__title">Chat</h3>
-            <p class="path-stage__desc">People use GPT or Claude individually. Company knowledge is limited to uploaded documents; usage has no governance.</p>
-            <p class="path-stage__note">The human is the integration layer. Every read and write is manual.</p>
-          </div>
-          <div class="path-stage reveal">
-            <p class="mono-tag mono-tag--muted">Stage 02</p>
-            <h3 class="path-stage__title">Chat connected to tools</h3>
-            <p class="path-stage__desc">AI reads and writes in your inbox, documents, and tools, but only through the provider's integration list, on the provider's terms.</p>
-            <p class="path-stage__note">Every task still takes many rounds of hands-on steering.</p>
-          </div>
-          <div class="path-stage reveal">
-            <p class="mono-tag mono-tag--sage-deep">Stage 03 · The first step</p>
-            <h3 class="path-stage__title">An agent with context</h3>
-            <p class="path-stage__desc">Context is built around one department. The agent follows a playbook and works directly inside your CRM, ERP, and inbox.</p>
-            <p class="path-stage__note">The agent becomes the integration layer. People supervise and approve.</p>
-          </div>
-          <div class="path-stage reveal">
-            <p class="mono-tag mono-tag--sage-deep">Stage 04 · The destination</p>
-            <h3 class="path-stage__title">A multi-agent platform</h3>
-            <p class="path-stage__desc">Specialised agents share one company knowledge base under a central orchestrator. Your team ships new agents by prompt, no code.</p>
-            <p class="path-stage__note">New agents ship in days, not projects. Governance stays central.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -455,47 +219,6 @@
             </div>
           </li>
         </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ANATOMY OF AN AGENT ============ -->
-  <section class="section section--tint" id="anatomy">
-    <div class="container split">
-      <div class="split__side reveal">
-        <p class="eyebrow"><span class="sq"></span>Under the hood</p>
-        <h2 class="h2">How an agent is created.</h2>
-        <p class="section__sub">An agent is not a chatbot with a logo. It is a system with five deliberate parts, each one built and tested before it touches real work.</p>
-      </div>
-
-      <div class="split__main">
-        <div class="anatomy-card">
-          <div class="anatomy-row reveal">
-            <span class="anatomy-row__num">01</span>
-            <h3 class="anatomy-row__title">Connect to context</h3>
-            <p class="anatomy-row__desc">The agent is grounded in the knowledge it reasons over: your data, documents, and domain.</p>
-          </div>
-          <div class="anatomy-row reveal">
-            <span class="anatomy-row__num">02</span>
-            <h3 class="anatomy-row__title">Integrate the tools</h3>
-            <p class="anatomy-row__desc">Secure connections to the systems it acts in: CRM, ERP, inbox, documents.</p>
-          </div>
-          <div class="anatomy-row reveal">
-            <span class="anatomy-row__num">03</span>
-            <h3 class="anatomy-row__title">Build the skills</h3>
-            <p class="anatomy-row__desc">Purpose-built capabilities for specific tasks, executed reliably every time.</p>
-          </div>
-          <div class="anatomy-row reveal">
-            <span class="anatomy-row__num">04</span>
-            <h3 class="anatomy-row__title">Create the playbook</h3>
-            <p class="anatomy-row__desc">Clear instructions for how the agent works: what it does, when, and in what order.</p>
-          </div>
-          <div class="anatomy-row reveal">
-            <span class="anatomy-row__num">05</span>
-            <h3 class="anatomy-row__title">Set the guardrails</h3>
-            <p class="anatomy-row__desc">Limits, approvals, and policies the agent can never step outside.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>

@@ -1240,10 +1240,11 @@ img { max-width: 100%; }
 .split--pin .split__side { position: static; }
 
 .step-list--scrolly .step {
-  opacity: 0.28;
-  transition: opacity 0.45s ease;
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.55s ease, transform 0.55s var(--ease-swift);
 }
-.step-list--scrolly .step.is-on { opacity: 1; }
+.step-list--scrolly .step.is-on { opacity: 1; transform: none; }
 .step-list--scrolly .step__marker {
   background: var(--cream-2);
   transition: background 0.45s ease;

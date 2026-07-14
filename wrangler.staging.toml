@@ -1,0 +1,11 @@
+# Staging preview — deploys the CURRENT WORKING DIRECTORY to a workers.dev URL.
+# Deploy: npx wrangler deploy --config wrangler.staging.toml
+# Production (layer-nine.ai) is untouched by this; it follows the main branch.
+name = "layer-nine-staging"
+compatibility_date = "2026-07-13"
+account_id = "be1f1dba7f58cbd463c4d3c0a5ca144c"
+workers_dev = true
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"

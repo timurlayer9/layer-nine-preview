@@ -1,4 +1,7 @@
+# layer-nine.ai domain worker — proxies GitHub Pages (the actual host).
+# Deploy: npx wrangler deploy   Rollback: delete the routes in Cloudflare dash.
 name = "layer-nine-site"
+main = "proxy.js"
 compatibility_date = "2026-07-13"
 account_id = "be1f1dba7f58cbd463c4d3c0a5ca144c"
 
@@ -6,8 +9,3 @@ routes = [
   { pattern = "layer-nine.ai/*", zone_name = "layer-nine.ai" },
   { pattern = "www.layer-nine.ai/*", zone_name = "layer-nine.ai" }
 ]
-
-[assets]
-directory = "."
-html_handling = "auto-trailing-slash"
-not_found_handling = "single-page-application"

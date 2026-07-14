@@ -322,7 +322,32 @@ img { max-width: 100%; }
   stroke-linecap: round;
   stroke-dasharray: 2 7;
   vector-effect: non-scaling-stroke;
-  animation: netDash 9s linear infinite;
+  animation: netDash 9s linear infinite, netFadeIn 0.7s ease backwards;
+  animation-delay: 0s, var(--d, 0s);
+}
+/* line tiers: human->tools, tools->hub, hub->systems */
+.net__lines path:nth-child(1) { --d: 0.42s; }
+.net__lines path:nth-child(2) { --d: 0.48s; }
+.net__lines path:nth-child(3) { --d: 0.54s; }
+.net__lines path:nth-child(4) { --d: 0.6s; }
+.net__lines path:nth-child(5) { --d: 1s; }
+.net__lines path:nth-child(6) { --d: 1.06s; }
+.net__lines path:nth-child(7) { --d: 1.12s; }
+.net__lines path:nth-child(8) { --d: 1.18s; }
+.net__lines path:nth-child(9) { --d: 1.42s; }
+.net__lines path:nth-child(10) { --d: 1.48s; }
+.net__lines path:nth-child(11) { --d: 1.54s; }
+.net__lines path:nth-child(12) { --d: 1.6s; }
+.net__lines path:nth-child(13) { --d: 1.66s; }
+.net__lines path:nth-child(14) { --d: 1.72s; }
+
+@keyframes netPop {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 12px)) scale(0.92); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes netFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes netDash {
   to { stroke-dashoffset: -63; }
@@ -334,6 +359,8 @@ img { max-width: 100%; }
   position: absolute;
   left: var(--x); top: var(--y);
   transform: translate(-50%, -50%);
+  animation: netFadeIn 0.7s ease backwards;
+  animation-delay: var(--d, 0s);
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 500;
@@ -348,6 +375,8 @@ img { max-width: 100%; }
   position: absolute;
   left: var(--x); top: var(--y);
   transform: translate(-50%, -50%);
+  animation: netPop 0.6s var(--ease-swift) backwards;
+  animation-delay: var(--d, 0s);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -402,7 +431,8 @@ img { max-width: 100%; }
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 70px 6px rgba(183, 194, 160, 0.16), 0 20px 40px -22px rgba(0, 0, 0, 0.6);
-  animation: hubPulse 4.5s ease-out infinite;
+  animation: netPop 0.7s var(--ease-swift) backwards, hubPulse 4.5s ease-out infinite;
+  animation-delay: var(--d, 0s), 2s;
 }
 @keyframes hubPulse {
   0% { box-shadow: 0 0 70px 6px rgba(183, 194, 160, 0.16), 0 20px 40px -22px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(183, 194, 160, 0.35); }
@@ -1463,6 +1493,7 @@ img { max-width: 100%; }
   .net__lines path { animation: none; }
   .net-node--hub { animation: none; }
   .net-node, .net-node__ic { transition: none; }
+  .net-node, .net-lbl { animation: none; }
 }
 
 /* ---------- responsive ---------- */
@@ -1501,7 +1532,7 @@ img { max-width: 100%; }
     padding: 10px 0;
   }
   .net__lines, .net-lbl { display: none; }
-  .net-node { position: static; transform: none; }
+  .net-node { position: static; transform: none; animation: netFadeIn 0.6s ease backwards; }
   .net-node:hover { transform: none; }
   .net-node--hub { order: -2; }
   .net-node--light { order: -1; }

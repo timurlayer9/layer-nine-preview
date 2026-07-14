@@ -328,6 +328,7 @@ img { max-width: 100%; }
   to { stroke-dashoffset: -63; }
 }
 
+
 /* category indicators */
 .net-lbl {
   position: absolute;
@@ -408,6 +409,15 @@ img { max-width: 100%; }
   55% { box-shadow: 0 0 70px 6px rgba(183, 194, 160, 0.16), 0 20px 40px -22px rgba(0, 0, 0, 0.6), 0 0 0 14px rgba(183, 194, 160, 0); }
   100% { box-shadow: 0 0 70px 6px rgba(183, 194, 160, 0.16), 0 20px 40px -22px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(183, 194, 160, 0); }
 }
+
+/* narrow desktops: compact pills so the network stays collision-free */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .net-node { font-size: 12px; gap: 8px; padding: 6px 13px 6px 6px; }
+  .net-node--hub { font-size: 13px; padding: 8px 16px 8px 8px; }
+  .net-node__ic { width: 24px; height: 24px; }
+  .net-node__ic svg { width: 14px; height: 14px; }
+}
+
 
 /* ---------- sections ---------- */
 

@@ -446,10 +446,36 @@
       <p class="eyebrow eyebrow--sage"><span class="sq sq--ink"></span>Loslegen</p>
       <h2 class="h2 cta__title">Starten Sie mit einem Use Case.</h2>
       <p class="section__sub cta__sub">Erzählen Sie uns von einem Workflow, in dem KI die Arbeit längst machen sollte. Wir kommen mit einem konkreten ersten Schritt zurück und einem Scope, den Sie zerpflücken können.</p>
-      <div class="cta__actions">
-        <a class="pill pill--dark pill--lg" href="mailto:hello@layer9.ai?subject=Erstgespr%C3%A4ch">Erstgespräch buchen</a>
-        <a class="cta__mail" href="mailto:hello@layer9.ai">hello@layer9.ai</a>
-      </div>
+      <form class="form" id="contactForm" novalidate
+            data-msg-success="Danke — wir melden uns innerhalb eines Arbeitstages."
+            data-msg-error="Beim Senden ist etwas schiefgelaufen. Ihr E-Mail-Programm wurde stattdessen geöffnet."
+            data-msg-invalid="Bitte Firmenname und eine gültige geschäftliche E-Mail angeben."
+            data-subject="Anfrage Erstgespräch">
+        <div class="form__row">
+          <div class="form__field">
+            <label class="form__label" for="cf-company">Firma <em>*</em></label>
+            <input class="form__input" id="cf-company" name="company" type="text" required autocomplete="organization" placeholder="Acme AG" />
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="cf-email">Geschäftliche E-Mail <em>*</em></label>
+            <input class="form__input" id="cf-email" name="email" type="email" required autocomplete="email" placeholder="sie@firma.ch" />
+          </div>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="cf-name">Ihr Name <span>optional</span></label>
+          <input class="form__input" id="cf-name" name="name" type="text" autocomplete="name" />
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="cf-help">Wobei können wir helfen? <span>optional</span></label>
+          <textarea class="form__input form__input--area" id="cf-help" name="help" rows="4" placeholder="Ein Workflow, eine Abteilung, eine grobe Idee — alles willkommen."></textarea>
+        </div>
+        <input class="form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="cta__actions">
+          <button class="pill pill--dark pill--lg" type="submit">Erstgespräch buchen</button>
+          <a class="cta__mail" href="mailto:luce@layer-nine.ai">oder direkt an luce@layer-nine.ai</a>
+        </div>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 

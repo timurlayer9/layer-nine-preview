@@ -84,6 +84,73 @@ window.addEventListener('scroll', onScroll, { passive: true });
   update();
 })();
 
+// Contact form: POST to the edge endpoint, fall back to a prefilled email
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const status = form.querySelector('.form__status');
+  const emailField = form.querySelector('[name="email"]');
+  const companyField = form.querySelector('[name="company"]');
+
+  const setStatus = (msg, isError) => {
+    status.textContent = msg;
+    status.classList.toggle('is-error', !!isError);
+  };
+
+  const mailtoFallback = (data) => {
+    const subject = `${form.dataset.subject} — ${data.company}`;
+    const body = [
+      `Company: ${data.company}`,
+      `Email: ${data.email}`,
+      data.name ? `Name: ${data.name}` : '',
+      data.help ? `\n${data.help}` : '',
+    ].filter(Boolean).join('\n');
+    window.location.href = `mailto:luce@layer-nine.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      company: companyField.value.trim(),
+      email: emailField.value.trim(),
+      name: form.querySelector('[name="name"]').value.trim(),
+      help: form.querySelector('[name="help"]').value.trim(),
+      website: form.querySelector('[name="website"]').value, // honeypot
+      page: location.pathname,
+    };
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email);
+    companyField.classList.toggle('is-invalid', !data.company);
+    emailField.classList.toggle('is-invalid', !emailOk);
+    if (!data.company || !emailOk) {
+      setStatus(form.dataset.msgInvalid, true);
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    setStatus('…');
+
+    try {
+      const resp = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!resp.ok) throw new Error(String(resp.status));
+      form.classList.add('is-sent');
+      setStatus(form.dataset.msgSuccess, false);
+    } catch (err) {
+      mailtoFallback(data);
+      setStatus(form.dataset.msgError, true);
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+
 // Reveal on scroll
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals = document.querySelectorAll('.reveal');

@@ -1,13 +1,21 @@
 // layer-nine.ai edge worker: serves the domain from GitHub Pages.
 // Hosting lives at https://timurlayer9.github.io/layer-nine-preview/ (auto-built
-// from this repo's main branch); this worker only maps the domain onto it.
+// from this repo's main branch); this worker only maps the domain onto it and
+// handles the contact form endpoint.
+
+import { handleContact } from './contact.js';
 
 const UPSTREAM_HOST = 'https://timurlayer9.github.io';
 const UPSTREAM_PREFIX = '/layer-nine-preview';
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/contact') {
+      if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+      return handleContact(request, env);
+    }
     const upstream = UPSTREAM_HOST + UPSTREAM_PREFIX + url.pathname + url.search;
 
     const resp = await fetch(upstream, {

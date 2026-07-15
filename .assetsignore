@@ -4,5 +4,7 @@
 wrangler.toml
 wrangler.staging.toml
 proxy.js
+staging-worker.js
+contact.js
 .assetsignore
 .wrangler

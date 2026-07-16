@@ -2,11 +2,13 @@
 // staging worker. Sends the submission to the team via Resend. The API key and
 // (optional) From address come from worker secrets/vars, never from source.
 
-export const CONTACT_TO = [
-  'luce@layer-nine.ai',
-  'timur@layer-nine.ai',
-  'hunter@layer-nine.ai',
-];
+// Without a verified domain, Resend only delivers to the account owner's
+// address. Once layer-nine.ai is verified in Resend, set the worker vars
+// MAIL_FROM ("Layer Nine <website@layer-nine.ai>") and CONTACT_TO
+// ("luce@layer-nine.ai,timur@layer-nine.ai,hunter@layer-nine.ai") to send
+// branded mail to the whole team directly.
+const DEFAULT_TO = ['timur@layer-nine.ai'];
+const DEFAULT_FROM = 'Layer Nine <onboarding@resend.dev>';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -54,8 +56,8 @@ export async function handleContact(request, env) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: env.MAIL_FROM || 'Layer Nine <website@layer-nine.ai>',
-        to: CONTACT_TO,
+        from: env.MAIL_FROM || DEFAULT_FROM,
+        to: env.CONTACT_TO ? env.CONTACT_TO.split(',').map((s) => s.trim()) : DEFAULT_TO,
         reply_to: email,
         subject: `Discovery call request — ${company}`,
         text: lines.join('\n'),

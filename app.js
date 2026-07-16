@@ -109,6 +109,20 @@ window.addEventListener('scroll', onScroll, { passive: true });
     window.location.href = `mailto:luce@layer-nine.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
+  // confirmation modal
+  const modal = document.getElementById('formModal');
+  const openModal = () => {
+    modal.hidden = false;
+    modal.querySelector('[data-close].pill').focus();
+  };
+  const closeModal = () => { modal.hidden = true; };
+  if (modal) {
+    modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -139,9 +153,21 @@ window.addEventListener('scroll', onScroll, { passive: true });
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!resp.ok) throw new Error(String(resp.status));
-      form.classList.add('is-sent');
-      setStatus(form.dataset.msgSuccess, false);
+      if (resp.ok) {
+        form.reset();
+        setStatus('', false);
+        if (modal) openModal();
+        else setStatus(form.dataset.msgSuccess, false);
+        return;
+      }
+      // Server rejected the email address itself: show it, no fallback.
+      const body = await resp.json().catch(() => ({}));
+      if (resp.status === 400 && body.error === 'email_domain') {
+        emailField.classList.add('is-invalid');
+        setStatus(form.dataset.msgBademail, true);
+        return;
+      }
+      throw new Error(String(resp.status));
     } catch (err) {
       mailtoFallback(data);
       setStatus(form.dataset.msgError, true);

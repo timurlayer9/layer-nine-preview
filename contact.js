@@ -12,6 +12,35 @@ const DEFAULT_FROM = 'Layer Nine <onboarding@resend.dev>';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+// Common disposable-address providers: not "working" emails for a sales lead.
+const DISPOSABLE = new Set([
+  'mailinator.com', 'tempmail.com', 'temp-mail.org', 'guerrillamail.com',
+  '10minutemail.com', 'yopmail.com', 'trashmail.com', 'sharklasers.com',
+  'getnada.com', 'dispostable.com', 'maildrop.cc', 'fakeinbox.com',
+  'throwawaymail.com', 'mytemp.email', 'tempmailo.com',
+]);
+
+// A "working" email needs a domain that actually accepts mail: MX records,
+// or at minimum an A record (RFC 5321 fallback). Checked via DNS-over-HTTPS.
+async function domainAcceptsMail(domain) {
+  const doh = async (type) => {
+    const r = await fetch(
+      `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(domain)}&type=${type}`,
+      { headers: { accept: 'application/dns-json' } },
+    );
+    if (!r.ok) throw new Error('doh');
+    const d = await r.json();
+    return Array.isArray(d.Answer) && d.Answer.length > 0;
+  };
+  try {
+    if (await doh('MX')) return true;
+    return await doh('A');
+  } catch {
+    // If the DNS check itself fails, don't block a potential lead.
+    return true;
+  }
+}
+
 export async function handleContact(request, env) {
   let data;
   try {
@@ -31,6 +60,11 @@ export async function handleContact(request, env) {
 
   if (!company || !EMAIL_RE.test(email)) {
     return Response.json({ ok: false, error: 'validation' }, { status: 400 });
+  }
+
+  const domain = email.split('@')[1].toLowerCase();
+  if (DISPOSABLE.has(domain) || !(await domainAcceptsMail(domain))) {
+    return Response.json({ ok: false, error: 'email_domain' }, { status: 400 });
   }
 
   // No key configured yet -> tell the client so it can fall back to a mailto link.

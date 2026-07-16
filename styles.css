@@ -1522,6 +1522,51 @@ img { max-width: 100%; }
   .form__row { grid-template-columns: 1fr; }
 }
 
+/* confirmation modal */
+.modal { position: fixed; inset: 0; z-index: 100; }
+.modal[hidden] { display: none; }
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 15, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.modal__card {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(420px, calc(100vw - 44px));
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 38px 36px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.5);
+  animation: modalIn 0.4s var(--ease-swift);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 16px)) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+.modal__icon {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  border-radius: 999px;
+  background: var(--sage);
+  margin-bottom: 6px;
+}
+.modal__title { font-size: 24px; font-weight: 600; letter-spacing: -0.015em; }
+.modal__text { font-size: 16px; line-height: 1.55; color: var(--gray); }
+.modal__card .pill { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .modal__card { animation: none; }
+}
+
 /* ---------- footer ---------- */
 
 .footer { padding: 56px 0; }

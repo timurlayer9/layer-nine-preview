@@ -84,6 +84,63 @@ window.addEventListener('scroll', onScroll, { passive: true });
   update();
 })();
 
+// Scroll-linked background flow: interpolate the body background between
+// section colors ([data-bg]) so differently-coloured sections blend smoothly.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els = Array.from(document.querySelectorAll('[data-bg]'));
+  if (!els.length) return;
+
+  document.documentElement.classList.add('bg-flow');
+
+  const hex2rgb = (h) => [
+    parseInt(h.slice(1, 3), 16),
+    parseInt(h.slice(3, 5), 16),
+    parseInt(h.slice(5, 7), 16),
+  ];
+  const ease = (t) => t * t * (3 - 2 * t); // smoothstep
+
+  let stops = [];
+  const measure = () => {
+    stops = els
+      .map((el) => ({
+        pos: el.getBoundingClientRect().top + window.scrollY,
+        c: hex2rgb(el.dataset.bg),
+      }))
+      .sort((a, b) => a.pos - b.pos);
+  };
+
+  let ticking = false;
+  const apply = () => {
+    ticking = false;
+    if (!stops.length) return;
+    const ref = window.scrollY + window.innerHeight * 0.5;
+    let c = stops[0].c;
+    for (let i = 1; i < stops.length; i++) {
+      const gap = stops[i].pos - stops[i - 1].pos;
+      const w = Math.min(window.innerHeight * 0.6, Math.max(240, gap * 0.5));
+      const t = Math.min(1, Math.max(0, (ref - (stops[i].pos - w * 0.5)) / w));
+      if (t <= 0) break;
+      const e = ease(t);
+      const n = stops[i].c;
+      c = [c[0] + (n[0] - c[0]) * e, c[1] + (n[1] - c[1]) * e, c[2] + (n[2] - c[2]) * e];
+    }
+    document.body.style.backgroundColor = `rgb(${c[0] | 0}, ${c[1] | 0}, ${c[2] | 0})`;
+  };
+  const requestApply = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+  };
+
+  window.addEventListener('scroll', requestApply, { passive: true });
+  window.addEventListener('resize', () => { measure(); requestApply(); }, { passive: true });
+  window.addEventListener('load', () => { measure(); requestApply(); });
+  measure();
+  apply();
+})();
+
 // Contact form: POST to the edge endpoint, fall back to a prefilled email
 (() => {
   const form = document.getElementById('contactForm');

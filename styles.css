@@ -50,6 +50,13 @@ img { max-width: 100%; }
 
 .theme-dark { background: var(--ink); color: var(--invert); }
 
+/* scroll-linked background flow: sections hand their color to the body,
+   which morphs between section colors as you scroll (see app.js) */
+html.bg-flow [data-bg] { background: transparent !important; }
+html.bg-flow .hero-bg__fade {
+  background: linear-gradient(180deg, rgba(20, 20, 15, 0.55) 0%, transparent 26%);
+}
+
 /* ---------- primitives ---------- */
 
 .sq {
